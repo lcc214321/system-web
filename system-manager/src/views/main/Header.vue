@@ -11,7 +11,7 @@
 					<el-menu-item index="modPwd" @click="modPwd">修改密码</el-menu-item>
 				</el-submenu>
 				<el-menu-item index="logout">
-					<img src="../../assets/exit.png" title="退出">
+					<img src="../../assets/img/exit.png" title="退出">
 				</el-menu-item>
 			</el-menu>
 		</div>
@@ -23,6 +23,7 @@
 <script>
 import UserInfo from './UserInfo';
 import ModPwd from './ModPwd';
+import AuthenApi from '@/api/AuthenApi';
 
 export default {
 	props: {
@@ -48,13 +49,18 @@ export default {
 			self.$confirm("确定退出当前用户吗?", "退出登录", {
 				type: 'warning'
 			}).then(() => {
-				self.$request({
+				/* self.$request({
 					url: "/logout",
 					success(result) {
 						self.$router.push("/login");
 						self.$system.clearData();
 					}
-				})
+				}) */
+				AuthenApi.logout().then(result => {
+					if (result) {
+						self.$router.push("/login");
+					}
+				});
 			}).catch({});
 		},
 		handleSelect(key, keyPath) {
@@ -104,7 +110,7 @@ export default {
 	float: left;
 	padding-left: 50px;
 	color: #049AD4;
-	background: url("../../assets/logo.png") no-repeat 0px 8px;
+	background: url("../../assets/img/logo.png") no-repeat 0px 8px;
 	margin-left: 20px;
 }
 

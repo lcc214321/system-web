@@ -4,10 +4,10 @@
         <div class="ms-login">
             <el-form ref="form" :model="data" :rules="rules" label-width="0px">
                 <el-form-item prop="username">
-                    <el-input v-model="username" placeholder="请输入用户名" maxlength="50"/>
+                    <el-input v-model="data.username" placeholder="请输入用户名" maxlength="50"/>
                 </el-form-item>
                 <el-form-item prop="password">
-                    <el-input v-model="password" placeholder="请输入密码" type="password"
+                    <el-input v-model="data.password" placeholder="请输入密码" type="password"
                     	@keyup.enter.native="login" maxlength="50"/>
                 </el-form-item>
                 <div class="login-btn">
@@ -25,8 +25,10 @@ import AuthenApi from '@/api/AuthenApi';
 export default {
 	data() {
         return {
-        	username: "",
-            password: "",
+        	data: {
+        		username: "",
+                password: ""
+        	},
             rules: {
                 username: [{
                 	required: true,
@@ -45,12 +47,12 @@ export default {
 			const self = this;
 			self.$refs.form.validate(valid => {
 				if (valid) {
-					AuthenApi.login(self.username, self.password).then(result => {
+					AuthenApi.login(self.data).then(result => {
 						if (result) {
                             Common.setCookie("token", result, 1000 * 60 * 60 * 24);
-                            self.loadData();
-                            self.$system.loadData();
-                            self.$router.push("/main");
+//                             self.loadData();
+//                             self.$system.loadData();
+                            self.$router.push("/index");
                         }
 					});
 				} else {

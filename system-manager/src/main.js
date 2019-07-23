@@ -1,5 +1,6 @@
 import 'element-ui/lib/theme-chalk/index.css';
 import '@smallwei/avue/lib/index.css';
+import '@/assets/css/index.css';
 
 import Vue from 'vue';
 import App from './App.vue';
@@ -49,6 +50,7 @@ axios.interceptors.response.use(response => {
 		const message = data.message || '未知错误';
 		if (code === 2 || code === 3) {
 			router.push("/login");
+			return false;
 		} else {
 			ElementUI.Message({
 	            type: 'error',

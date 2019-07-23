@@ -1,7 +1,7 @@
 <template>
 	<div class="main-div">
 		<h1 class="title">平台系统管理中心</h1>
-		<img class="welcome-img" src="../../assets/welcome.png">
+		<img class="welcome-img" src="../../assets/img/welcome.png">
 	</div>
 </template>
 

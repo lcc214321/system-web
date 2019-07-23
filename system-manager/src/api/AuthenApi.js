@@ -15,11 +15,10 @@ class AuthenApi {
     /**
 	 * 用户登录服务
 	 * 
-	 * @param username 用户名
-	 * @param password 密码
+	 * @param data 登录信息
 	 */
-	static login(username, password) {
-		return axios.post('/authen/login', {username, password});
+	static login(data) {
+		return axios.post('/authen/login', data);
 	}
 
     /**
@@ -30,7 +29,7 @@ class AuthenApi {
 	}
 
     /**
-	 * 获取当前会话认证业务信息
+	 * 获取当前会话认证信息
 	 */
 	static info() {
 		return axios.get('/authen/info');
