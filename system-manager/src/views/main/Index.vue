@@ -14,6 +14,7 @@
 import vHeader from "./Header";
 import vSidebar from "./Sidebar";
 import AuthenApi from '@/api/AuthenApi';
+import axios from 'axios';
 
 export default {
 	data() {
@@ -23,10 +24,8 @@ export default {
 		};
 	},
 	created() {
-		const self = this;
-		AuthenApi.bizInfo().then(result => {
-			self.$cache.bizInfo = result;
-		});
+// 		this.testload();
+		let hh = 'hh';
 //         this.loadData();
 	},
 	methods: {
@@ -43,6 +42,17 @@ export default {
             } else {
                 self.$router.push("/login");
             }
+        },
+        async testload() {
+//             const self = this;
+//             let isAuthen = null;
+//         	await AuthenApi.isAuthen().then(result => {
+// //                 self.$cache.bizInfo = result;
+//                 isAuthen = result;
+//             });
+            let isAuthen1 = await axios.get('/authen/isAuthen');
+            let isAuthen2 = await axios.get('/authen/isAuthen');
+        	return 123;
         }
 	},
 	components: {vHeader, vSidebar}

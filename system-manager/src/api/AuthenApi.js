@@ -32,8 +32,8 @@ class AuthenApi {
     /**
 	 * 获取当前会话认证业务信息
 	 */
-	static bizInfo() {
-		return axios.get('/authen/bizInfo');
+	static info() {
+		return axios.get('/authen/info');
 	}
 
 }

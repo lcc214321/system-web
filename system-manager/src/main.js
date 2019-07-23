@@ -9,6 +9,7 @@ import Avue from '@smallwei/avue';
 import axios from 'axios';
 import {areaTree, Common} from 'basic-assets';
 import Cache from 'cache-base';
+import AuthenApi from '@/api/AuthenApi';
 
 //缓存
 const cache = new Cache();
@@ -64,6 +65,15 @@ axios.interceptors.response.use(response => {
 	return Promise.reject(new Error(error));
 })
 
+AuthenApi.isAuthen().then(isAuthen => {
+	cache.isAuthen = isAuthen;
+	if (isAuthen) {
+		AuthenApi.info().then(info => cache.info = info);
+	} else {
+		router.push("/login");
+	}
+});
+
 Vue.use(ElementUI);
 Vue.use(Avue);
 Vue.prototype.$axios = axios;
@@ -75,3 +85,4 @@ new Vue({
   router,
   render: h => h(App)
 }).$mount('#app');
+
