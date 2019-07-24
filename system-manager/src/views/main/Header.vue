@@ -49,15 +49,9 @@ export default {
 			self.$confirm("确定退出当前用户吗?", "退出登录", {
 				type: 'warning'
 			}).then(() => {
-				/* self.$request({
-					url: "/logout",
-					success(result) {
-						self.$router.push("/login");
-						self.$system.clearData();
-					}
-				}) */
 				AuthenApi.logout().then(result => {
 					if (result) {
+                        self.$system.clearData();
 						self.$router.push("/login");
 					}
 				});

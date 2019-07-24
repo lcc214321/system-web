@@ -50,8 +50,7 @@ export default {
 					AuthenApi.login(self.data).then(result => {
 						if (result) {
                             Common.setCookie("token", result, 1000 * 60 * 60 * 24);
-//                             self.loadData();
-//                             self.$system.loadData();
+                            self.$system.loadInfo();
                             self.$router.push("/index");
                         }
 					});
