@@ -1,11 +1,19 @@
 <template>
     <div class="login-wrap">
         <el-card class="box-card">
-            <avue-form ref="form" v-model="data" :option="option" @submit="submit">
-                <template slot-scope="scope" slot="menuForm">
-                    <el-button @click="tip">自定义按钮</el-button>
-                </template>
-            </avue-form>
+            <div class="login-title">{{ $config.sysName }}</div>
+            <el-form ref="form" :model="data" :rules="rules" label-width="0px">
+                <el-form-item prop="username">
+                    <el-input v-model="data.username" placeholder="请输入用户名" maxlength="32"/>
+                </el-form-item>
+                <el-form-item prop="password">
+                    <el-input v-model="data.password" placeholder="请输入密码" type="password"
+                        @keyup.enter.native="login" maxlength="32"/>
+                </el-form-item>
+                <div class="login-btn">
+                    <el-button type="primary" @click="submit">登录</el-button>
+                </div>
+            </el-form>
         </el-card>
     </div>
 </template>
@@ -33,9 +41,6 @@ export default {
                 }]
             }
         }
-    },
-    computed: {
-    	
     },
     methods: {
         submit() {
@@ -71,5 +76,22 @@ export default {
 
 .box-card {
     text-align: center;
+    width: 400px;
+}
+
+.login-title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.login-btn {
+    text-align: center;
+}
+
+.login-btn button {
+    width: 100%;
+    height: 40px;
 }
 </style>
