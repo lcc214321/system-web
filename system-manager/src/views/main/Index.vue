@@ -24,35 +24,16 @@ export default {
 		};
 	},
 	created() {
-// 		this.testload();
-		let hh = 'hh';
-//         this.loadData();
+        this.loadData();
 	},
 	methods: {
 		loadData() {
-            const self = this;
-            let currInfo = self.$system.cache.currInfo;
-            if (currInfo) {
-                if (currInfo.menu) {
-                    self.menus = currInfo.menu;
-                }
-                if (currInfo.user) {
-                    self.userId = currInfo.user.userId;
-                }
+			this.menus = this.$cache.menu || [];
+            if (this.$cache.info && this.$cache.info.user) {
+            	this.userId = this.$cache.info.user.userId;
             } else {
-                self.$router.push("/login");
+            	this.userId = "未知用户";
             }
-        },
-        async testload() {
-//             const self = this;
-//             let isAuthen = null;
-//         	await AuthenApi.isAuthen().then(result => {
-// //                 self.$cache.bizInfo = result;
-//                 isAuthen = result;
-//             });
-            let isAuthen1 = await axios.get('/authen/isAuthen');
-            let isAuthen2 = await axios.get('/authen/isAuthen');
-        	return 123;
         }
 	},
 	components: {vHeader, vSidebar}
