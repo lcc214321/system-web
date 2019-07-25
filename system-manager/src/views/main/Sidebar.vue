@@ -6,7 +6,9 @@
 				<template v-if="item.children">
                     <el-submenu :index="item.funcId">
 						<template slot="title"><i v-if="item.icon" :class="item.icon"></i>{{ item.funcName }}</template>
-						<el-menu-item v-for="(subItem,i) in item.children" :key="i" :index="subItem.url">{{ subItem.funcName }}</el-menu-item>
+						<el-menu-item v-for="(subItem,i) in item.children" :key="i" :index="subItem.url">
+                            <template slot="title"><i v-if="subItem.icon" :class="subItem.icon"></i>{{ subItem.funcName }}</template>
+						</el-menu-item>
                     </el-submenu>
                 </template>
                 <template v-else>
