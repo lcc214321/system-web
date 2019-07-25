@@ -1,7 +1,5 @@
 import router from '@/router';
-import AuthenApi from '@/api/AuthenApi';
-import FuncApi from '@/api/FuncApi';
-import DictApi from '@/api/DictApi';
+import SystemApi from '@/api/SystemApi';
 
 /**
  * 系统业务类
@@ -22,7 +20,7 @@ class System {
 			throw new Error('系统缓存不能为空！');
 		}
 		this.sysId = sysId;
-        AuthenApi.isAuthen().then(isAuthen => {
+        SystemApi.isAuthen().then(isAuthen => {
         	if (isAuthen) {
         		this.loadInfo(callback);
         	} else {
@@ -37,7 +35,7 @@ class System {
      * @param callback 加载成功回调函数
      */
     loadInfo(callback) {
-    	AuthenApi.info().then(info => {
+    	SystemApi.info().then(info => {
 			cache.info = info;
 			if (callback) {
     			callback(info);
@@ -63,14 +61,14 @@ class System {
      * @param roles 角色列表
      */
     loadMenu(roles) {
-    	FuncApi.tree(this.sysId, roles).then(menu => cache.menu = menu);
+    	SystemApi.menu(this.sysId, roles).then(menu => cache.menu = menu);
     }
 
     /**
      * 加载字典
      */
     loadDict() {
-    	DictApi.dictMap().then(dict => {
+    	SystemApi.dict().then(dict => {
     		cache.dict = dict;
     		let dictListMap = {};
     		Object.entries(dict)

@@ -23,7 +23,7 @@
 <script>
 import UserInfo from './UserInfo';
 import ModPwd from './ModPwd';
-import AuthenApi from '@/api/AuthenApi';
+import SystemApi from '@/api/SystemApi';
 
 export default {
 	data() {
@@ -63,7 +63,7 @@ export default {
 			self.$confirm("确定退出当前用户吗?", "退出登录", {
 				type: 'warning'
 			}).then(() => {
-				AuthenApi.logout().then(result => {
+				SystemApi.logout().then(result => {
 					if (result) {
                         self.$system.clearData();
 						self.$router.push("/login");

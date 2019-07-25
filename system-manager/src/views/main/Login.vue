@@ -20,7 +20,7 @@
 
 <script>
 import {Common} from 'basic-assets';
-import AuthenApi from '@/api/AuthenApi';
+import SystemApi from '@/api/SystemApi';
 
 export default {
     data() {
@@ -47,7 +47,7 @@ export default {
             const self = this;
             self.$refs.form.validate(valid => {
                 if (valid) {
-                    AuthenApi.login(self.data).then(result => {
+                    SystemApi.login(self.data).then(result => {
                         if (result) {
                             Common.setCookie("token", result, self.$config.expiredays);
                             self.$system.loadInfo();

@@ -1,9 +1,9 @@
 import axios from 'axios';
 
 /**
- * 登录认证接口
+ * 系统接口
  */
-class AuthenApi {
+class SystemApi {
 
     /**
 	 * 当前会话是否在线
@@ -43,6 +43,28 @@ class AuthenApi {
 		return axios.get('/authen/info');
 	}
 
+    /**
+	 * 查询功能树状数据
+	 * 
+	 * @param sysId
+	 *            系统编号
+	 * @param roleIds
+	 *            角色编号列表
+	 * @return 请求对象
+	 */
+	static menu(sysId, roleIds) {
+		return axios.get('/sys/func/tree', {params: {sysId, roleIds}});
+	}
+
+    /**
+	 * 查询业务字典全集
+	 * 
+	 * @return 请求对象
+	 */
+	static dict() {
+		return axios.get('/sys/dict/dictMap');
+	}
+
 }
 
-export default AuthenApi;
+export default SystemApi;
