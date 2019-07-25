@@ -56,7 +56,7 @@ export default {
 			pageSize: 10,
 			currentPage: 1,
 			totalCount: 0,
-			tableHeight: this.$system.limitHeight(112)
+			tableHeight: 1000
 		};
 	},
 	created() {

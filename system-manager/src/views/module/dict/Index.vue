@@ -61,7 +61,7 @@ export default {
 			editData: {},
 			isAdd: true,
 			treeCache: new Map(),
-			tableHeight: this.$system.limitHeight(70)
+			tableHeight: 1000
 		};
 	},
 	created() {
