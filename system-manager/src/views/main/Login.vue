@@ -1,5 +1,5 @@
 <template>
-    <div class="login-wrap">
+    <div class="login-wrapper">
         <el-card class="box-card">
             <div class="login-title">{{ $config.sysName }}</div>
             <el-form ref="form" :model="data" :rules="rules" label-width="0px">
@@ -64,7 +64,7 @@ export default {
 </script>
 
 <style scoped>
-.login-wrap {
+.login-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;

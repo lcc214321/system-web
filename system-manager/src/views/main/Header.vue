@@ -26,9 +26,6 @@ import ModPwd from './ModPwd';
 import AuthenApi from '@/api/AuthenApi';
 
 export default {
-	props: {
-		userId: String
-	},
 	data() {
 		return {
 			userInfoShow: false,
@@ -42,6 +39,14 @@ export default {
 	components: {
 		ModPwd ,
 		UserInfo
+	},
+	computed: {
+		userId() {
+			if (this.$cache.info && this.$cache.info.user) {
+				return this.$cache.info.user.userId;
+			}
+			return "未登录";
+		}
 	},
 	methods: {
 		logout() {
