@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import Gaode from "@/components/public/Gaode";
+import Gaode from "@/components/Gaode";
 
 export default {
 	data() {
