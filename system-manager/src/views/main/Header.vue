@@ -6,7 +6,7 @@
 				background-color="#242F42" text-color="#FFFFFF"
 				:active-text-color="activeTextColor">
 				<el-submenu index="user" style="border-bottom-color: blue!important;">
-					<template slot="title">{{ userId }}</template>
+					<template slot="title">{{ userInfoData.userId }}</template>
 					<el-menu-item index="userInfo" @click="userInfo">用户信息</el-menu-item>
 					<el-menu-item index="modPwd" @click="modPwd">修改密码</el-menu-item>
 				</el-submenu>
@@ -36,6 +36,15 @@ export default {
 			activeTextColor: "#FFD04B",
 		}
 	},
+    mounted() {
+        const self = this;
+        let timer = setInterval(() => {
+            if (self.$cache.has('info')) {
+                self.userInfoData = self.$cache.info.user;
+                clearInterval(timer);
+            }
+        }, 100);
+    },
 	components: {
 		ModPwd ,
 		UserInfo
@@ -73,9 +82,7 @@ export default {
 		},
 		//登录用户信息
 		userInfo() {
-			const self = this;
-			self.userInfoShow = true;
-			self.userInfoData = self.$system.cache.currInfo.user;
+			this.userInfoShow = true;
 		},
 		//修改密码
 		modPwd() {

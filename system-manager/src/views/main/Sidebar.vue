@@ -21,11 +21,20 @@
 
 <script>
 export default {
-	computed: {
-		menus() {
-	        return this.$cache.menu || [];
-	    }
-	}
+    data() {
+        return {
+        	menus: [],
+        }
+    },
+    mounted() {
+    	const self = this;
+    	let timer = setInterval(() => {
+    		if (self.$cache.has('menu')) {
+    			self.menus = self.$cache.menu;
+    			clearInterval(timer);
+    		}
+    	}, 100);
+    }
 }
 </script>
 
