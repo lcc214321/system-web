@@ -75,10 +75,10 @@ export default {
 			if (self.keyword) {
 				data.keyword = self.keyword;
 			} else {
-				let currInfo = self.$system.cache.currInfo;
-				if (currInfo) {
-					if (currInfo.user.userId != "admin" && (!currInfo.roles || !currInfo.roles.includes("admin"))) {
-						data.orgId = currInfo.user.orgId;
+				let info = self.$cache.info;
+				if (info) {
+					if (info.user.userId != "admin" && (!info.roles || !info.roles.includes("admin"))) {
+						data.orgId = info.user.orgId;
 					} else {
 						data.parentId = 0;
 					}
