@@ -94,7 +94,7 @@ export default {
 	box-sizing: border-box;
 	width: 100%;
 	height: 60px;
-	font-size: 22px;
+	font-size: 24px;
 	line-height: 60px;
 	color: #fff;
 	background-color: #242f42;
@@ -106,6 +106,7 @@ export default {
 	color: #049AD4;
 	background: url("../../assets/img/logo.png") no-repeat 0px 8px;
 	margin-left: 20px;
+    font-weight: bold;
 }
 
 .user-info {

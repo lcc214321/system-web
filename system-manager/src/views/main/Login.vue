@@ -84,6 +84,7 @@ export default {
     font-size: 30px;
     font-weight: bold;
     margin-bottom: 20px;
+    color: gray;
 }
 
 .login-btn {
