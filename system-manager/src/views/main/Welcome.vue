@@ -1,6 +1,6 @@
 <template>
 	<div class="main-div">
-		<h1 class="title">欢迎光临平台系统管理中心</h1>
+		<h1 class="title">欢迎光临{{ $config.sysName }}</h1>
 		<img class="welcome-img" src="../../assets/img/welcome.png">
 	</div>
 </template>

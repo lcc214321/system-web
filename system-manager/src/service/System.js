@@ -11,17 +11,17 @@ class System {
     /**
      * 初始化系统服务
      * 
-     * @param name 系统名称
+     * @param sysId 系统编号
      * @param callback 认证成功回调函数
      */
-	constructor(name, callback) {
-		if (!name) {
+	constructor(sysId, callback) {
+		if (!sysId) {
 			throw new Error('系统名称不能为空！');
 		}
 		if (!cache) {
 			throw new Error('系统缓存不能为空！');
 		}
-		this.name = name;
+		this.sysId = sysId;
         AuthenApi.isAuthen().then(isAuthen => {
         	if (isAuthen) {
         		this.loadInfo(callback);
@@ -63,7 +63,7 @@ class System {
      * @param roles 角色列表
      */
     loadMenu(roles) {
-    	FuncApi.tree(this.name, roles).then(menu => cache.menu = menu);
+    	FuncApi.tree(this.sysId, roles).then(menu => cache.menu = menu);
     }
 
     /**

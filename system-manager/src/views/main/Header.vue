@@ -1,6 +1,6 @@
 <template>
 	<div class="header">
-		<div class="logo"> 平台系统管理中心</div>
+		<div class="logo"> {{ $config.sysName }}</div>
 		<div class="user-info">
 			<el-menu class="el-menu-demo" mode="horizontal" @select="handleSelect"
 				background-color="#242F42" text-color="#FFFFFF"

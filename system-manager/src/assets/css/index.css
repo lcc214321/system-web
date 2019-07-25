@@ -1,279 +1,322 @@
-* {
+/* * { */
+/*     margin: 0; */
+/*     padding: 0; */
+/* } */
+
+/* html, body, #app, .wrapper { */
+/*     width: 100%; */
+/*     height: 100%; */
+/*     overflow: hidden; */
+/* } */
+
+/* body { */
+/*     font-family: "Helvetica Neue", Helvetica, "microsoft yahei", arial, */
+/*         STHeiTi, sans-serif; */
+/* } */
+
+/* a { */
+/*     text-decoration: none */
+/* } */
+
+/* .content { */
+/*     background: none repeat scroll 0 0 #fff; */
+/*     position: absolute; */
+/*     left: 220px; */
+/*     right: 0; */
+/*     top: 60px; */
+/*     bottom: 0; */
+/*     width: auto; */
+/*     box-sizing: border-box; */
+/*     overflow-y: auto; */
+/*     padding: 10px; */
+/* } */
+
+/* .crumbs { */
+/*     margin-bottom: 20px; */
+/* } */
+
+/* .pagination { */
+/*     margin-top: 10px; */
+/*     text-align: right; */
+/* } */
+
+/* .plugins-tips { */
+/*     padding: 20px 10px; */
+/*     margin-bottom: 20px; */
+/* } */
+
+/* .el-button+.el-tooltip { */
+/*     margin-left: 10px; */
+/* } */
+
+/* .el-table tr:hover { */
+/*     background: #f6faff; */
+/* } */
+
+/* .mgb20 { */
+/*     margin-bottom: 20px; */
+/* } */
+
+/* .move-enter-active, .move-leave-active { */
+/*     transition: opacity .5s; */
+/* } */
+
+/* .move-enter, .move-leave { */
+/*     opacity: 0; */
+/* } */
+
+/* .form-box { */
+/*     width: 600px; */
+/* } */
+
+/* .form-box .line { */
+/*     text-align: center; */
+/* } */
+
+/* .el-time-panel__content::after, .el-time-panel__content::before { */
+/*     margin-top: -7px; */
+/* } */
+
+/* .ms-doc .el-checkbox__input.is-disabled+.el-checkbox__label { */
+/*     color: #333; */
+/*     cursor: pointer; */
+/* } */
+
+/* .pure-button { */
+/*     width: 150px; */
+/*     height: 40px; */
+/*     line-height: 40px; */
+/*     text-align: center; */
+/*     color: #fff; */
+/*     border-radius: 3px; */
+/* } */
+
+/* .g-core-image-corp-container .info-aside { */
+/*     height: 45px; */
+/* } */
+
+/* .ql-container { */
+/*     min-height: 400px; */
+/* } */
+
+/* .ql-snow .ql-tooltip { */
+/*     transform: translateX(117.5px) translateY(10px) !important; */
+/* } */
+
+/* .editor-btn { */
+/*     margin-top: 20px; */
+/* } */
+
+/* .el-menu--collapse .el-menu .el-submenu, .el-menu--popup { */
+/*     min-width: 0px !important; */
+/* } */
+
+/* .el-table tr { */
+/*     height: 36px !important; */
+/*     line-height: 36px !important; */
+/* } */
+
+/* .el-table th { */
+/*     text-align: left !important; */
+/*     height: 35px !important; */
+/*     line-height: 35px !important; */
+/*     padding: 0px !important; */
+/*     background: #F2F2F2 !important; */
+/*     border-color: #E2E2E2 !important; */
+/* } */
+
+/* .el-table th>.cell { */
+/*     color: #606266 !important; */
+/*     font-size: 14px !important; */
+/* } */
+
+/* .el-table__header-wrapper, .el-table__header tr, */
+/*     .el-table__header-wrapper thead { */
+/*     height: 36px !important; */
+/*     line-height: 36px !important; */
+/* } */
+
+/* .el-table td { */
+/*     padding: 5px 5px !important; */
+/*     word-break: keep-all !important; */
+/*     white-space: nowrap !important; */
+/*     text-overflow: ellipsis !important; */
+/*     overflow: hidden !important; */
+/* } */
+
+/* .el-table .cell { */
+/*     word-break: keep-all !important; */
+/* } */
+
+/* ::-webkit-scrollbar { */
+/*     width: 8px; */
+/* } */
+
+/* ::-webkit-scrollbar-track { */
+/*     background-color: #dcdfe6; */
+/*     border-radius: 3px; */
+/* } */
+
+/* ::-webkit-scrollbar-thumb { */
+/*     background-color: #c0c4cc;; */
+/*     border-radius: 3px; */
+/* } */
+
+/* ::-webkit-scrollbar-thumb:hover { */
+/*     background-color: #c0c4cc */
+/* } */
+
+/* ::-webkit-scrollbar-thumb:active { */
+/*     background-color: #999 */
+/* } */
+
+/* .el-dialog__body { */
+/*     padding: 0px 0px !important; */
+/* } */
+
+/* .el-input-group__prepend { */
+/*     border-right: 0 !important; */
+/*     width: 100px !important; */
+/*     text-align: center !important; */
+/* } */
+
+/* .el-table--scrollable-x .el-table__body-wrapper { */
+/*     overflow-x: hidden !important; */
+/* } */
+
+/* .el-tabs--border-card { */
+/*     border-bottom: 1px solid transparent !important; */
+/*     -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, .12), 0 0 0 0 */
+/*         rgba(0, 0, 0, .04) !important; */
+/*     box-shadow: 0 0 0 0 rgba(0, 0, 0, .12), 0 0 0 0 rgba(0, 0, 0, .04) */
+/*         !important; */
+/* } */
+
+/* textarea { */
+/*     font: 400 13.3333px Arial !important; */
+/* } */
+
+/* .choose { */
+/*     margin-bottom: 10px; */
+/*     padding-left: 5px; */
+/*     height: 45px; */
+/*     line-height: 45px; */
+/*     font-size: 14px; */
+/*     background: #F2F2F2; */
+/*     color: #409EFF */
+/* } */
+
+/* .el-dialog__header { */
+/*     padding: 15px !important; */
+/*     background-color: #EEEEEE !important; */
+/* } */
+
+/* .el-dialog { */
+/*     margin: auto !important; */
+/*     position: absolute !important; */
+/*     left: 50% !important; */
+/*     top: 50% !important; */
+/*     transform: translate(-50%, -50%) !important; */
+/* } */
+
+/* .el-tabs--border-card>.el-tabs__content { */
+/*     padding: 10px !important; */
+/* } */
+
+/* .dialog-body { */
+/*     max-height: 350px; */
+/*     overflow-y: auto; */
+/*     padding: 10px 20px; */
+/* } */
+
+/* .dialog-info-body { */
+/*     max-height: 400px; */
+/*     padding: 20px; */
+/* } */
+
+/* .search-input { */
+/*     float: right; */
+/*     width: 250px; */
+/*     margin-left: 5px; */
+/* } */
+
+/* .left-box { */
+/*     height: calc(100vh - 80px) !important; */
+/*     border: 1px solid #DDDDDD !important; */
+/*     padding: 10px !important; */
+/* } */
+
+/* .right-box { */
+/*     margin-left: 10px !important; */
+/*     padding: 0 !important; */
+/* } */
+
+/* .header-box { */
+/*     height: 50px !important; */
+/*     padding: 0 !important; */
+/* } */
+
+/* .header-box > .left { */
+/*     float: left; */
+/* } */
+
+/* .header-box > .right { */
+/*     float: right; */
+/* } */
+
+/* .main-box { */
+/*     padding: 0 !important; */
+/* } */
+
+html, body, #app {
+    height: 100%;
     margin: 0;
     padding: 0;
 }
 
-html, body, #app, .wrapper {
-    width: 100%;
+.avue-home {
+    background-color: #303133;
     height: 100%;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
-body {
-    font-family: "Helvetica Neue", Helvetica, "microsoft yahei", arial,
-        STHeiTi, sans-serif;
+.avue-home__main {
+    user-select: none;
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-a {
-    text-decoration: none
-}
-
-.content {
-    background: none repeat scroll 0 0 #fff;
-    position: absolute;
-    left: 220px;
-    right: 0;
-    top: 60px;
-    bottom: 0;
-    width: auto;
-    box-sizing: border-box;
-    overflow-y: auto;
-    padding: 10px;
-}
-
-.crumbs {
-    margin-bottom: 20px;
-}
-
-.pagination {
-    margin-top: 10px;
-    text-align: right;
-}
-
-.plugins-tips {
-    padding: 20px 10px;
-    margin-bottom: 20px;
-}
-
-.el-button+.el-tooltip {
-    margin-left: 10px;
-}
-
-.el-table tr:hover {
-    background: #f6faff;
-}
-
-.mgb20 {
-    margin-bottom: 20px;
-}
-
-.move-enter-active, .move-leave-active {
-    transition: opacity .5s;
-}
-
-.move-enter, .move-leave {
-    opacity: 0;
-}
-
-/*BaseForm*/
-.form-box {
-    width: 600px;
-}
-
-.form-box .line {
+.avue-home__footer {
+    width: 100%;
+    flex-grow: 0;
     text-align: center;
+    padding: 1em 0;
 }
 
-.el-time-panel__content::after, .el-time-panel__content::before {
-    margin-top: -7px;
+.avue-home__footer>a {
+    font-size: 12px;
+    color: #ABABAB;
+    text-decoration: none;
 }
 
-/*Readme*/
-.ms-doc .el-checkbox__input.is-disabled+.el-checkbox__label {
-    color: #333;
-    cursor: pointer;
+.avue-home__loading {
+    height: 32px;
+    width: 32px;
+    margin-bottom: 20px;
 }
 
-/*Upload*/
-.pure-button {
-    width: 150px;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    color: #fff;
-    border-radius: 3px;
-}
-
-.g-core-image-corp-container .info-aside {
-    height: 45px;
-}
-
-/*VueEditor*/
-.ql-container {
-    min-height: 400px;
-}
-
-.ql-snow .ql-tooltip {
-    transform: translateX(117.5px) translateY(10px) !important;
-}
-
-.editor-btn {
-    margin-top: 20px;
-}
-
-.el-menu--collapse .el-menu .el-submenu, .el-menu--popup {
-    min-width: 0px !important;
-}
-
-/*table*/
-.el-table tr {
-    height: 36px !important;
-    line-height: 36px !important;
-}
-
-.el-table th {
-    text-align: left !important;
-    height: 35px !important;
-    line-height: 35px !important;
-    padding: 0px !important;
-    background: #F2F2F2 !important;
-    border-color: #E2E2E2 !important;
-}
-
-.el-table th>.cell {
-    color: #606266 !important;
-    font-size: 14px !important;
-}
-
-.el-table__header-wrapper, .el-table__header tr,
-    .el-table__header-wrapper thead {
-    height: 36px !important;
-    line-height: 36px !important;
-}
-
-.el-table td {
-    padding: 5px 5px !important;
-    word-break: keep-all !important;
-    white-space: nowrap !important;
-    text-overflow: ellipsis !important;
-    overflow: hidden !important;
-}
-
-.el-table .cell {
-    word-break: keep-all !important;
-}
-
-/*滚动条样式美化*/
-/*滚动条整体部分，其中的属性有width,height,background,border（就和一个块级元素一样）等。*/
-::-webkit-scrollbar {
-    width: 8px;
-}
-
-/*外层轨道。可以用display:none让其不显示，也可以添加背景图片，颜色改变显示效果。*/
-::-webkit-scrollbar-track {
-    background-color: #dcdfe6;
-    border-radius: 3px;
-}
-
-/*滚动条里面可以拖动的那部分*/
-::-webkit-scrollbar-thumb {
-    background-color: #c0c4cc;;
-    border-radius: 3px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background-color: #c0c4cc
-}
-
-::-webkit-scrollbar-thumb:active {
-    background-color: #999
-}
-
-/*dialog*/
-.el-dialog__body {
-    padding: 0px 0px !important;
-}
-
-.el-input-group__prepend {
-    border-right: 0 !important;
-    width: 100px !important;
-    text-align: center !important;
-}
-
-.el-table--scrollable-x .el-table__body-wrapper {
-    overflow-x: hidden !important;
-}
-
-.el-tabs--border-card {
-    border-bottom: 1px solid transparent !important;
-    -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, .12), 0 0 0 0
-        rgba(0, 0, 0, .04) !important;
-    box-shadow: 0 0 0 0 rgba(0, 0, 0, .12), 0 0 0 0 rgba(0, 0, 0, .04)
-        !important;
-}
-
-textarea {
-    font: 400 13.3333px Arial !important;
-}
-
-.choose {
-    margin-bottom: 10px;
-    padding-left: 5px;
-    height: 45px;
-    line-height: 45px;
+.avue-home__title {
+    color: #FFF;
     font-size: 14px;
-    background: #F2F2F2;
-    color: #409EFF
+    margin-bottom: 10px;
 }
 
-.el-dialog__header {
-    padding: 15px !important;
-    background-color: #EEEEEE !important;
-}
-
-.el-dialog {
-    margin: auto !important;
-    position: absolute !important;
-    left: 50% !important;
-    top: 50% !important;
-    transform: translate(-50%, -50%) !important;
-}
-
-.el-tabs--border-card>.el-tabs__content {
-    padding: 10px !important;
-}
-
-.dialog-body {
-    max-height: 350px;
-    overflow-y: auto;
-    padding: 10px 20px;
-}
-
-.dialog-info-body {
-    max-height: 400px;
-    padding: 20px;
-}
-
-.search-input {
-    float: right;
-    width: 250px;
-    margin-left: 5px;
-}
-
-.left-box {
-    height: calc(100vh - 80px) !important;
-    border: 1px solid #DDDDDD !important;
-    padding: 10px !important;
-}
-
-.right-box {
-    margin-left: 10px !important;
-    padding: 0 !important;
-}
-
-.header-box {
-    height: 50px !important;
-    padding: 0 !important;
-}
-
-.header-box > .left {
-    float: left;
-}
-
-.header-box > .right {
-    float: right;
-}
-
-.main-box {
-    padding: 0 !important;
+.avue-home__sub-title {
+    color: #ABABAB;
+    font-size: 12px;
 }
