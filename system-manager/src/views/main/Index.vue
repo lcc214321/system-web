@@ -34,9 +34,13 @@ export default {
 
 .el-aside {
 	background-color: #324157;
+	overflow-y: auto;
+    overflow-x: hidden;
+    height: calc(100vh - 60px);
 }
 
 .el-main {
     padding: 10px;
+    overflow: auto;
 }
 </style>

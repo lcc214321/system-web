@@ -1,5 +1,5 @@
 <template>
-    <div class="wrap">
+    <div class="wrapper">
         <div class="welcome">
             <h1 class="title">欢迎光临{{ $config.sysName }}</h1>
             <img class="welcome-img" src="../../assets/img/welcome.png">
@@ -8,8 +8,7 @@
 </template>
 
 <style scoped>
-.wrap {
-    height: 100%;
+.wrapper {
     display: flex;
     justify-content: center;
     align-items: center;

@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="header">
 		<div class="logo"> {{ $config.sysName }}</div>
 		<div class="user-info">
 			<el-menu class="el-menu-demo" mode="horizontal" @select="handleSelect"

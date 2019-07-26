@@ -1,5 +1,5 @@
 <template>
-    <div class="login-wrapper">
+    <div class="wrapper">
         <el-card class="box-card">
             <div class="login-title">{{ $config.sysName }}</div>
             <el-form ref="form" :model="data" :rules="rules" label-width="0px">
@@ -64,13 +64,10 @@ export default {
 </script>
 
 <style scoped>
-.login-wrapper {
+.wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    height: 100%;
-    width: 100%;
     background-image: url("../../assets/img/bg.png");
     background-repeat: no-repeat;
     background-size: cover;
