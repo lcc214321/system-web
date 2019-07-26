@@ -44,6 +44,17 @@ class SystemApi {
 	}
 
     /**
+	 * 用户密码修改
+	 * 
+	 * @param data
+	 *            密码修改信息
+	 * @return 请求对象
+	 */
+	static modPwd(data) {
+		return axios.put('/authen/modPwd', data);
+	}
+
+    /**
 	 * 查询功能树状数据
 	 * 
 	 * @param sysId
