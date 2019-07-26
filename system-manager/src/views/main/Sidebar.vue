@@ -41,27 +41,7 @@ export default {
 </script>
 
 <style scoped>
-.sidebar {
-	display: block;
-	position: absolute;
-	width: 220px;
-	left: 0;
-	top: 60px;
-	bottom: 0;
-	background: #2E363F;
-}
-
-.sidebar>ul {
-	height: 100%;
-}
-
-.el-submenu .el-menu-item.el-menu-item {
-	height: 40px !important;
-	line-height: 40px !important;
-}
-
-.el-menu-item, .el-submenu__title {
-	height: 50px !important;
-	line-height: 50px !important;
+.el-menu {
+    border-right: 0px;
 }
 </style>

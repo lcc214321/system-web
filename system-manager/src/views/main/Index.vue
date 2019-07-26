@@ -1,13 +1,19 @@
 <template>
-	<div class="wrapper">
-		<v-header/>
-		<v-sidebar/>
-		<div class="content">
-			<transition name="move" mode="out-in">
-				<router-view/>
-			</transition>
-		</div>
-	</div>
+    <el-container class="wrapper">
+        <el-header>
+            <v-header/>
+        </el-header>
+        <el-container>
+            <el-aside width="220px">
+                <v-sidebar/>
+            </el-aside>
+            <el-main>
+                <transition name="move" mode="out-in">
+                    <router-view/>
+                </transition>
+            </el-main>
+        </el-container>
+    </el-container>
 </template>
 
 <script>
@@ -20,5 +26,17 @@ export default {
 </script>
 
 <style scoped>
+.el-header {
+	background-color: #242F42;
+	color: #FFFFFF;
+	line-height: 60px;
+}
 
+.el-aside {
+	background-color: #324157;
+}
+
+.el-main {
+    padding: 10px;
+}
 </style>

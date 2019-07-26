@@ -71,7 +71,9 @@ export default {
     position: absolute;
     height: 100%;
     width: 100%;
-    background: gray;
+    background-image: url("../../assets/img/bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .box-card {

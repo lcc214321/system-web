@@ -1,5 +1,5 @@
 <template>
-	<div class="header">
+	<div>
 		<div class="logo"> {{ $config.sysName }}</div>
 		<div class="user-info">
 			<el-menu class="el-menu-demo" mode="horizontal" @select="handleSelect"
@@ -101,51 +101,17 @@ export default {
 </script>
 
 <style scoped>
-.header {
-	position: relative;
-	box-sizing: border-box;
-	width: 100%;
-	height: 60px;
-	font-size: 24px;
-	line-height: 60px;
-	color: #fff;
-	background-color: #242f42;
-}
-
-.header .logo {
+.logo {
 	float: left;
+    font-size: 24px;
 	padding-left: 50px;
-	color: #049AD4;
+	color: #87CECB;
 	background: url("../../assets/img/logo.png") no-repeat 0px 8px;
-	margin-left: 20px;
     font-weight: bold;
 }
 
 .user-info {
 	float: right;
 	font-size: 16px;
-	color: #fff;
-}
-
-.user-info .el-dropdown-link {
-	position: relative;
-	display: inline-block;
-	padding-left: 50px;
-	color: #fff;
-	cursor: pointer;
-	vertical-align: middle;
-}
-
-.user-info .user-logo {
-	position: absolute;
-	left: 0;
-	top: 15px;
-	width: 40px;
-	height: 40px;
-	border-radius: 50%;
-}
-
-.el-dropdown-menu__item {
-	text-align: center;
 }
 </style>
