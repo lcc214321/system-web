@@ -1,19 +1,19 @@
 <template>
     <div class="wrapper">
-		<el-dialog title="用户信息" :visible="isShow" @close="$emit('close')" width="450px"
-			:close-on-click-modal="closeOn" :close-on-press-escape="closeOn">
-			<avue-detail :option="option" v-model="data"/>
-		</el-dialog>
+        <el-dialog title="用户信息" :visible="isShow" @close="$emit('close')" width="450px"
+            :close-on-click-modal="closeOn" :close-on-press-escape="closeOn">
+            <avue-detail :option="option" v-model="data"/>
+        </el-dialog>
     </div>
 </template>
 
 <script>
 export default {
-	data() {
-		return {
-			closeOn: false,
-			option: {
-				column: [{
+    data() {
+        return {
+            closeOn: false,
+            option: {
+                column: [{
                     label: '用户名',
                     prop: 'userId',
                     row: true,
@@ -50,21 +50,21 @@ export default {
                     span: 24,
                 }]
             }
-		}
-	},
-	props: {
-		isShow: Boolean,
-		data: Object
-	}
+        }
+    },
+    props: {
+        isShow: Boolean,
+        data: Object
+    }
 }
 </script>
 
 <style scoped>
 .wrapper {
-	line-height: 0px;
+    line-height: 0px;
 }
 
 .el-dialog__wrapper> >> .el-dialog__body {
-	padding: 10px;
+    padding: 10px;
 }
 </style>

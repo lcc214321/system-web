@@ -21,20 +21,20 @@ import vHeader from "./Header";
 import vSidebar from "./Sidebar";
 
 export default {
-	components: {vHeader, vSidebar}
+    components: {vHeader, vSidebar}
 }
 </script>
 
 <style scoped>
 .el-header {
-	background-color: #242F42;
-	color: #FFFFFF;
-	line-height: 60px;
+    background-color: #242F42;
+    color: #FFFFFF;
+    line-height: 60px;
 }
 
 .el-aside {
-	background-color: #324157;
-	overflow-y: auto;
+    background-color: #324157;
+    overflow-y: auto;
     overflow-x: hidden;
     height: calc(100vh - 60px);
 }

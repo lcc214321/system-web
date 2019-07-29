@@ -11,15 +11,15 @@
 import SystemApi from '@/api/SystemApi';
 
 export default {
-	data() {
-		return {
-			closeOn: false,
-			formData: {},
-		};
-	},
-	props: {
-		isShow: Boolean
-	},
+    data() {
+        return {
+            closeOn: false,
+            formData: {},
+        };
+    },
+    props: {
+        isShow: Boolean
+    },
     computed: {
         option() {
             return {
@@ -39,7 +39,7 @@ export default {
                     }],
                     row: true,
                 }, {
-                	label: '新密码',
+                    label: '新密码',
                     prop: 'newPwd',
                     type: 'password',
                     span: 24,
@@ -54,7 +54,7 @@ export default {
                     }],
                     row: true,
                 }, {
-                	label: '确认密码',
+                    label: '确认密码',
                     prop: 'cfmPwd',
                     type: 'password',
                     span: 24,
@@ -72,10 +72,10 @@ export default {
             }
         }
     },
-	methods: {
-		open() {
-			this.$refs.form && this.$refs.form.resetForm();
-		},
+    methods: {
+        open() {
+            this.$refs.form && this.$refs.form.resetForm();
+        },
         submit() {
             const self = this;
             if (self.formData.newPwd != self.formData.cfmPwd) {
@@ -89,7 +89,7 @@ export default {
                 }
             });
         }
-	}
+    }
 }
 </script>
 

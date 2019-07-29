@@ -12,20 +12,20 @@ class System {
      * @param sysId 系统编号
      * @param callback 认证成功回调函数
      */
-	constructor(sysId, callback) {
-		if (!sysId) {
-			throw new Error('系统名称不能为空！');
-		}
-		if (!cache) {
-			throw new Error('系统缓存不能为空！');
-		}
-		this.sysId = sysId;
+    constructor(sysId, callback) {
+        if (!sysId) {
+            throw new Error('系统名称不能为空！');
+        }
+        if (!cache) {
+            throw new Error('系统缓存不能为空！');
+        }
+        this.sysId = sysId;
         SystemApi.isAuthen().then(isAuthen => {
-        	if (isAuthen) {
-        		this.loadInfo(callback);
-        	} else {
-        		router.push('/login');
-        	}
+            if (isAuthen) {
+                this.loadInfo(callback);
+            } else {
+                router.push('/login');
+            }
         });
     }
 
@@ -35,14 +35,14 @@ class System {
      * @param callback 加载成功回调函数
      */
     loadInfo(callback) {
-    	SystemApi.info().then(info => {
-			cache.info = info;
-			if (callback) {
-    			callback(info);
-    		} else {
-    			this.loadData(info);
-    		}
-		});
+        SystemApi.info().then(info => {
+            cache.info = info;
+            if (callback) {
+                callback(info);
+            } else {
+                this.loadData(info);
+            }
+        });
     }
 
     /**
@@ -61,21 +61,21 @@ class System {
      * @param roles 角色列表
      */
     loadMenu(roles) {
-    	SystemApi.menu(this.sysId, roles).then(menu => cache.menu = menu);
+        SystemApi.menu(this.sysId, roles).then(menu => cache.menu = menu);
     }
 
     /**
      * 加载字典
      */
     loadDict() {
-    	SystemApi.dict().then(dict => {
-    		cache.dict = dict;
-    		let dictListMap = {};
-    		Object.entries(dict)
-    			.forEach(([k, v]) => dictListMap[k] = Object.entries(v)
-    					.map(([key, value]) => ({code: key, name: value})));
-    		cache.dictListMap = dictListMap;
-    	});
+        SystemApi.dict().then(dict => {
+            cache.dict = dict;
+            let dictListMap = {};
+            Object.entries(dict)
+                .forEach(([k, v]) => dictListMap[k] = Object.entries(v)
+                        .map(([key, value]) => ({code: key, name: value})));
+            cache.dictListMap = dictListMap;
+        });
     }
 
     /**
@@ -87,26 +87,26 @@ class System {
     }
 
     /**
-	 * 递归查询树状列表数据
-	 * 
-	 * @param id
-	 *            查询编号
-	 * @param list
-	 *            查询列表
-	 * @param idField
-	 *            编号字段名
-	 * @param listField
-	 *            列表字段名
-	 * @return 查询结果
-	 */
+     * 递归查询树状列表数据
+     * 
+     * @param id
+     *            查询编号
+     * @param list
+     *            查询列表
+     * @param idField
+     *            编号字段名
+     * @param listField
+     *            列表字段名
+     * @return 查询结果
+     */
     recursiveQuery(id, list, idField = "id", listField = "children") {
-    	if (!id || !list || !list.length) {
-    		return null;
-    	}
-    	for (let item of list) {
-    		if (!item) {
-    			continue;
-    		}
+        if (!id || !list || !list.length) {
+            return null;
+        }
+        for (let item of list) {
+            if (!item) {
+                continue;
+            }
             if (item[idField] == id) {
                 return item;
             }
@@ -119,17 +119,17 @@ class System {
     }
 
     /**
-	 * 根据菜单编号获取菜单
-	 * 
-	 * @param menuId
-	 *            菜单编号
-	 * @return 菜单
-	 */
+     * 根据菜单编号获取菜单
+     * 
+     * @param menuId
+     *            菜单编号
+     * @return 菜单
+     */
     getMenu(menuId) {
-    	if (!menuId) {
-        	return null;
-    	}
-    	let menu = this.recursiveQuery(menuId, cache.menu, "funcId");
+        if (!menuId) {
+            return null;
+        }
+        let menu = this.recursiveQuery(menuId, cache.menu, "funcId");
         if (menu) {
             return menu;
         }
@@ -138,16 +138,16 @@ class System {
 
     /**
      * 根据地区代码获取地区
-	 * 
-	 * @param areaId
-	 *            地区编号
-	 * @return 地区
+     * 
+     * @param areaId
+     *            地区编号
+     * @return 地区
      */
     getArea(areaId) {
-    	if (!areaId || Number(areaId) <= 100000) {
-    		return cache.area;
-    	}
-    	let area = this.recursiveQuery(areaId, cache.area, "areaId");
+        if (!areaId || Number(areaId) <= 100000) {
+            return cache.area;
+        }
+        let area = this.recursiveQuery(areaId, cache.area, "areaId");
         if (area) {
             return area;
         }
@@ -156,10 +156,10 @@ class System {
 
     /**
      * 根据地区代码获取地区名称
-	 * 
-	 * @param areaId
-	 *            地区编号
-	 * @return 地区名称
+     * 
+     * @param areaId
+     *            地区编号
+     * @return 地区名称
      */
     getAreaName(areaId) {
         let area = this.getArea(areaId);
@@ -168,10 +168,10 @@ class System {
 
     /**
      * 根据上级字典编码获取字典
-	 * 
-	 * @param parentCode
-	 *            上级代码
-	 * @return 字典
+     * 
+     * @param parentCode
+     *            上级代码
+     * @return 字典
      */
     getDictMap(parentCode) {
         if (cache.dict) {
@@ -182,27 +182,27 @@ class System {
 
     /**
      * 根据上级字典编码获取字典
-	 * 
-	 * @param parentCode
-	 *            上级代码
-	 * @return 字典列表
+     * 
+     * @param parentCode
+     *            上级代码
+     * @return 字典列表
      */
     getDictList(parentCode) {
-    	if (cache.dictListMap) {
-    		return cache.dictListMap[parentCode];
-    	}
+        if (cache.dictListMap) {
+            return cache.dictListMap[parentCode];
+        }
         return null;
     }
 
     /**
-	 * 根据上级字典编码和子级字典编码获取字典名称
-	 * 
-	 * @param parentCode
-	 *            上级代码
-	 * @param code
-	 *            字典代码
-	 * @return 字典名称
-	 */
+     * 根据上级字典编码和子级字典编码获取字典名称
+     * 
+     * @param parentCode
+     *            上级代码
+     * @param code
+     *            字典代码
+     * @return 字典名称
+     */
     getDictName(parentCode, code) {
         if (cache.dict && cache.dict[parentCode]) {
             return cache.dictMap[parentCode][code];
@@ -213,13 +213,13 @@ class System {
     /**
      * 判断是否拥有权限
      * 
-	 * @param auth
-	 *            权限标识
-	 * @return 是否拥有权限
+     * @param auth
+     *            权限标识
+     * @return 是否拥有权限
      */
     isAuth(auth) {
         if (auth && cache.info && cache.info.auths && cache.info.auths.length) {
-        	return cache.info.auths.includes(auth);
+            return cache.info.auths.includes(auth);
         }
         return false;
     }
