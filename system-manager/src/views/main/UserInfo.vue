@@ -1,35 +1,10 @@
 <template>
-	<div class="window_box">
-		<el-dialog :title="title" :visible="isShow" @close="close" width="450px"
+    <div class="wrapper">
+		<el-dialog title="用户信息" :visible="isShow" @close="$emit('close')" width="450px"
 			:close-on-click-modal="closeOn" :close-on-press-escape="closeOn">
-			<div class="dialog-info-body">
-				<el-input v-model="data.userId" readonly="true">
-					<template slot="prepend">用户名</template>
-				</el-input>
-				<el-input v-model="data.realName" readonly="true">
-					<template slot="prepend">真实姓名</template>
-				</el-input>
-				<el-input v-model="data.gender" readonly="true">
-					<template slot="prepend">性别</template>
-				</el-input>
-				<el-input v-model="data.birthday" readonly="true">
-					<template slot="prepend">出生日期</template>
-				</el-input>
-				<el-input v-model="data.address" readonly="true">
-					<template slot="prepend">地址</template>
-				</el-input>
-				<el-input v-model="data.areaId" readonly="true">
-					<template slot="prepend">地区编码</template>
-				</el-input>
-				<el-input v-model="data.mobilePhone" readonly="true">
-					<template slot="prepend">电话</template>
-				</el-input>
-				<el-input v-model="data.email" readonly="true">
-					<template slot="prepend">邮箱</template>
-				</el-input>
-			</div>
+			<avue-detail :option="option" v-model="data"/>
 		</el-dialog>
-	</div>
+    </div>
 </template>
 
 <script>
@@ -37,24 +12,59 @@ export default {
 	data() {
 		return {
 			closeOn: false,
-			orgName: "",
+			option: {
+				column: [{
+                    label: '用户名',
+                    prop: 'userId',
+                    row: true,
+                    span: 24,
+                }, {
+                    label: '真实姓名',
+                    prop: 'realName',
+                    row: true,
+                    span: 24,
+                }, {
+                    label: '性别',
+                    prop: 'gender',
+                    row: true,
+                    span: 24,
+                }, {
+                    label: '出生日期',
+                    prop: 'birthday',
+                    row: true,
+                    span: 24,
+                }, {
+                    label: '地址',
+                    prop: 'address',
+                    row: true,
+                    span: 24,
+                }, {
+                    label: '电话',
+                    prop: 'phone',
+                    row: true,
+                    span: 24,
+                }, {
+                    label: '邮箱',
+                    prop: 'email',
+                    row: true,
+                    span: 24,
+                }]
+            }
 		}
 	},
 	props: {
 		isShow: Boolean,
-		title: String,
 		data: Object
-	},
-	methods: {
-		close() {
-			this.$emit("close");
-		}
 	}
 }
 </script>
 
 <style scoped>
-.window_box {
+.wrapper {
 	line-height: 0px;
+}
+
+.el-dialog__wrapper> >> .el-dialog__body {
+	padding: 10px;
 }
 </style>
