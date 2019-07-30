@@ -108,7 +108,7 @@ class System {
      *            列表字段名
      * @return 查询结果
      */
-    recursiveQuery(id, list, idField = "id", listField = "children") {
+    recursiveQuery(id, list, idField = 'id', listField = 'children') {
         if (!id || !list || !list.length) {
             return null;
         }
@@ -138,7 +138,7 @@ class System {
         if (!menuId) {
             return null;
         }
-        let menu = this.recursiveQuery(menuId, cache.menu, "funcId");
+        let menu = this.recursiveQuery(menuId, cache.menu, 'funcId');
         if (menu) {
             return menu;
         }
@@ -156,7 +156,7 @@ class System {
         if (!areaId || Number(areaId) <= 100000) {
             return cache.area;
         }
-        let area = this.recursiveQuery(areaId, cache.area, "areaId");
+        let area = this.recursiveQuery(areaId, cache.area, 'areaId');
         if (area) {
             return area;
         }
