@@ -73,7 +73,7 @@ class SystemApi {
      * @return 请求对象
      */
     static dict() {
-        return axios.get('/sys/dict/dictMap');
+        return axios.get('/sys/dict/tree');
     }
 
 }

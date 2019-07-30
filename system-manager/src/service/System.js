@@ -70,11 +70,20 @@ class System {
     loadDict() {
         SystemApi.dict().then(dict => {
             cache.dict = dict;
-            let dictListMap = {};
-            Object.entries(dict)
-                .forEach(([k, v]) => dictListMap[k] = Object.entries(v)
-                        .map(([key, value]) => ({code: key, name: value})));
-            cache.dictListMap = dictListMap;
+            let dictList = {};
+            let dictMap = {};
+            dict.forEach(({code, children}) => {
+                dictList[code] = [];
+                dictMap[code] = {};
+                if (children && children.length) {
+                    dictList[code] = children.map(({code, name}) => ({label: name, value: code}));
+                    let dm = {};
+                    children.forEach(({code, name}) => dm[code] = name);
+                    dictMap[code] = dm;
+                }
+            });
+            cache.dictList = dictList;
+            cache.dictMap = dictMap;
         });
     }
 
@@ -174,8 +183,8 @@ class System {
      * @return 字典
      */
     getDictMap(parentCode) {
-        if (cache.dict) {
-            return cache.dict[parentCode];
+        if (cache.dictMap) {
+            return cache.dictMap[parentCode];
         }
         return null;
     }
@@ -188,8 +197,8 @@ class System {
      * @return 字典列表
      */
     getDictList(parentCode) {
-        if (cache.dictListMap) {
-            return cache.dictListMap[parentCode];
+        if (cache.dictList) {
+            return cache.dictList[parentCode];
         }
         return null;
     }
@@ -204,7 +213,7 @@ class System {
      * @return 字典名称
      */
     getDictName(parentCode, code) {
-        if (cache.dict && cache.dict[parentCode]) {
+        if (cache.dictMap && cache.dictMap[parentCode]) {
             return cache.dictMap[parentCode][code];
         }
         return null;

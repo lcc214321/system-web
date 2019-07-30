@@ -20,7 +20,9 @@ export default {
                     prop: 'orgName'
                 }, {
                     label: '机构类型',
-                    prop: 'orgTypeName',
+                    prop: 'orgType',
+                    type: 'select',
+                    dicData: this.$system.getDictList('org_type'),
                     width: 150
                 }]
             }
